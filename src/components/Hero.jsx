@@ -1,15 +1,56 @@
-import React from "react";
-import Countdown from "react-countdown";
+import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import { Parallax } from "react-parallax";
+import weddingbackground from "../assets/weddingbackground.jpg"; 
+
+const weddingDate = new Date("2025-06-15T00:00:00");
+
+// Animated number component
+const AnimatedNumber = ({ number }) => (
+  <motion.span
+    initial={{ opacity: 0, y: -20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.5 }}
+  >
+    {number}
+  </motion.span>
+);
 
 const Hero = () => {
-  const weddingDate = new Date("2025-06-15T00:00:00");
+  const [timeLeft, setTimeLeft] = useState(weddingDate - new Date().getTime());
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTimeLeft(weddingDate - new Date().getTime());
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
+
+  // Calculate days, hours, minutes, seconds
+  const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
   return (
-    <section id="home" className="hero">
-      <h1>Welcome to Our Wedding</h1>
-      <h2>June 15, 2025</h2>
-      <Countdown date={weddingDate} />
-    </section>
+    <Parallax bgImage={weddingbackground} strength={300} className="parallax-container">
+      <div className="hero-content">
+        <motion.h1 
+          animate={{ y: [0, -10, 0] }} 
+          transition={{ repeat: Infinity, duration: 2 }}
+        >
+          Welcome to Our Wedding
+        </motion.h1>
+        <h2>June 15, 2025</h2>
+        <p>
+          Countdown: 
+          <AnimatedNumber number={days} /> days, 
+          <AnimatedNumber number={hours} /> hours, 
+          <AnimatedNumber number={minutes} /> minutes, 
+          <AnimatedNumber number={seconds} /> seconds
+        </p>
+      </div>
+    </Parallax>
   );
 };
 
