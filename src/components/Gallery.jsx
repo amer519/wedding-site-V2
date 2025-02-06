@@ -17,7 +17,8 @@ const Gallery = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   return (
-    <section id="gallery" className="gallery">
+    <section id="gallery" className="gallery-container">
+      <div className="gallery-content">
       <h2>Photo Gallery</h2>
       <div className="gallery-grid">
         {images.map((img, index) => (
@@ -32,6 +33,8 @@ const Gallery = () => {
           />
         ))}
       </div>
+      </div>
+
       
       {/* Lightbox with Zoom and Fade plugins */}
       <Lightbox 

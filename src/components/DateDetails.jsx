@@ -3,9 +3,14 @@ import React from "react";
 const DateDetails = () => {
   return (
     <section id="date" className="details">
-      <h2>Wedding Details</h2>
-      <p>📍 Location: Grand Venue, City</p>
-      <p>⏰ Time: 5:00 PM</p>
+      {/* Curved Background Behind Text */}
+      <div className="details-content">
+        <h2>Wedding Details</h2>
+        <p>📍 Location: Grand Venue, City</p>
+        <p>⏰ Time: 5:00 PM</p>
+      </div>
+
+      {/* Google Maps - Outside the Background */}
       <iframe
         src="https://www.google.com/maps/embed?pb=..."
         width="100%"

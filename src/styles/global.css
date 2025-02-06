@@ -3,6 +3,10 @@ body {
     font-family: 'Lora', serif;
     background-color: #f8f5f2;
     color: #333;
+    background-image: url("/public/images/background.jpg"); /* Replace with your actual image path */
+    background-size: cover; 
+    background-attachment: fixed; /* Keeps it in place when scrolling */
+    background-position: center;
 }
 h1, h2 {
     font-family: 'Playfair Display', serif;
@@ -49,22 +53,93 @@ section {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 40px 20px;
+    padding: 10px 20px;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
+    z-index: 2; 
 }
 h2 {
-    font-size: 26px;
-    font-weight: bold;
-    margin-bottom: 10px;
+    font-size: 42px; /* Increase font size for a grand look */
+    font-weight: 500; /* Slightly lighter for elegance */
+    font-family: 'Playfair Display', serif; /* Matches the upscale aesthetic */
+    text-align: center;
+    letter-spacing: 2px; /* Adds spacing for a luxury feel */
+    margin-bottom: 5px; /* Reduced space below the title */
+    padding-bottom: 0px; /* Ensure there's no extra padding */
+    /* color: #333; Darker color for better readability */
 }
 p {
-    font-size: 16px;
-    line-height: 1.5;
-    margin-bottom: 10px;
+    font-size: 20px; /* Increase font size for a grand look */
+    font-weight: 500; /* Slightly lighter for elegance */
+    font-family: 'Playfair Display', serif; /* Matches the upscale aesthetic */
+    text-align: center;
+    letter-spacing: 2px; /* Adds spacing for a luxury feel */
+    margin-bottom: 5px; /* Reduced space below the title */
+    padding-bottom: 0px; /* Ensure there's no extra padding */
+    /* color: #333; Darker color for better readability */
 }
+
+
+
+
+
+
+/* Gallery Section - Curved Background */
+.gallery-container {
+    /* background: #e5d5c3; */
+    background: #f8f5f2;
+    padding: 50px 20px;
+    border-radius: 30px; /* Smooth rounded edges */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Create Curved Shape */
+.gallery-container::before, .gallery-container::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    background: inherit;
+    clip-path: ellipse(50% 50px at center);
+}
+.gallery-container::before {
+    top: -25px;
+    transform: scaleY(-1);
+}
+.gallery-container::after {
+    bottom: -25px;
+}
+
+/* Gallery Grid */
+.gallery-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px;
+}
+
+/* Style Images */
+.gallery-grid img {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.gallery-grid img:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+
+
 
 /* Hero Section & Parallax Background */
 .parallax-container {
@@ -76,6 +151,9 @@ p {
     position: relative;
     overflow: hidden;
     border-radius: 20px;
+    margin-top: 40px;  /* Adds space below the navbar */
+    z-index: 1;
+
 }
 .parallax-container img {
     object-fit: cover;
@@ -90,7 +168,7 @@ p {
     width: 100%;
     height: 100%;
     background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1));
-    border-radius: 20px;
+    border-radius: 20px
 }
 .hero-content {
     text-align: center;
@@ -115,14 +193,6 @@ p {
 }
 
 /* Wedding Couple Section */
-.couple-section {
-    text-align: center;
-    padding: 60px 20px;
-}
-.couple-info {
-    max-width: 600px;
-    margin: 0 auto 30px auto;
-}
 .couple-images {
     display: flex;
     justify-content: center;
@@ -209,35 +279,46 @@ p {
 }
 
 /* Wedding Party Section with Brown Background */
+/* Ensure Wedding Party Section is Centered */
 .wedding-party-section {
-    background: #e5d5c3; /* Modern warm brown */
-    padding: 40px 20px; /* Reduced padding to bring elements closer */
-    border-radius: 20px; /* Soft rounded corners */
-    margin: 30px 0; /* Less vertical space */
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow for elegance */
-}
-
-/* Heading inside the wedding party section */
-.wedding-party-section h2 {
-    font-size: 42px; /* Increase font size for a grand look */
-    font-weight: 500; /* Slightly lighter for elegance */
-    font-family: 'Playfair Display', serif; /* Matches the upscale aesthetic */
+    background: #e5d5c3; /* Light brown */
+    padding: 50px 20px;
+    border-radius: 30px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 1000px; /* Keeps width reasonable */
+    margin: 0 auto; /* ✅ Centers the entire section */
     text-align: center;
-    letter-spacing: 2px; /* Adds spacing for a luxury feel */
-    margin-bottom: 5px; /* Reduced space below the title */
-    padding-bottom: 0px; /* Ensure there's no extra padding */
-    color: #333; /* Darker color for better readability */
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* ✅ Ensures internal content is centered */
 }
 
-/* Wedding Party Grid */
+/* Ensure Title is Centered */
+.wedding-party-section h2 {
+    font-size: 42px;
+    font-weight: 500;
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+/* Center the Wedding Party Grid */
 .wedding-party-grid {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: center; /* ✅ Ensures all items are centered */
+    align-items: center; /* ✅ Fixes vertical alignment */
     gap: 20px;
+    width: 100%; /* Prevents stretching issues */
+    max-width: 800px; /* ✅ Centers content within this width */
+    margin: 0 auto; /* ✅ Forces full centering */
 }
 
-/* Individual wedding party members */
+/* Individual Wedding Party Members */
 .party-member {
     background: white;
     padding: 20px;
@@ -248,18 +329,18 @@ p {
     transition: transform 0.3s ease-in-out;
 }
 
-/* Hover effect */
-.party-member:hover {
-    transform: scale(1.05);
-}
-
-/* Circular Images inside Rectangle Boxes */
+/* Circular Images inside Boxes */
 .party-member img {
     width: 100px;
     height: 100px;
-    border-radius: 50%; /* Makes image circular */
+    border-radius: 50%;
     object-fit: cover;
     margin-bottom: 10px;
+}
+
+/* Hover Effect */
+.party-member:hover {
+    transform: scale(1.05);
 }
 
 /* Name and Role Styling */
@@ -268,7 +349,6 @@ p {
     font-weight: bold;
     margin-bottom: 5px;
 }
-
 .party-member p {
     font-size: 14px;
     color: #555;
@@ -312,6 +392,7 @@ p {
     padding: 60px 20px;
     border-radius: 30px;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    /* padding-top: 40px; */
 }
 .wedding-details-section {
     background: #f8f5f2;
@@ -324,15 +405,83 @@ p {
     padding: 60px 20px;
     border-radius: 30px;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.couple-section h2 {
+    font-size: 42px; /* Increase font size for a grand look */
+    font-weight: 500; /* Slightly lighter for elegance */
+    font-family: 'Playfair Display', serif; /* Matches the upscale aesthetic */
+    text-align: center;
+    letter-spacing: 2px; /* Adds spacing for a luxury feel */
+    margin-bottom: 5px; /* Reduced space below the title */
+    padding-bottom: 0px; /* Ensure there's no extra padding */
+    color: #333; /* Darker color for better readability */
+}
+
+.couple-section p {
+    font-size: 20px; /* Increase font size for a grand look */
+    font-weight: 500; /* Slightly lighter for elegance */
+    font-family: 'Playfair Display', serif; /* Matches the upscale aesthetic */
+    text-align: center;
+    letter-spacing: 2px; /* Adds spacing for a luxury feel */
+    margin-bottom: 5px; /* Reduced space below the title */
+    padding-bottom: 0px; /* Ensure there's no extra padding */
+    color: #333; /* Darker color for better readability */
 }
 
 /* Wedding Party Section (Ensures Proper Background) */
-.wedding-party-section {
-    background: #e5d5c3;
+/* Keep Everything Else the Same */
+
+
+
+
+
+/* Wedding Details Section */
+.details {
+    position: relative;
     padding: 50px 20px;
-    border-radius: 20px;
-    margin: 30px 0;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
-/* Keep Everything Else the Same */
+/* Curved Background Behind Text */
+.details-content {
+    background: #e5d5c3; /* Light brown */
+    padding: 30px 20%;
+    border-radius: 30px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    text-align: center;
+    max-width: 600px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+/* Create Smooth Curved Edges */
+/* .details-content::before, .details-content::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    background: inherit;
+    clip-path: ellipse(50% 50px at center);
+} */
+/* .details-content::before {
+    top: -25px;
+    transform: scaleY(-1);
+}
+.details-content::after {
+    bottom: -25px;
+} */
+
+/* Keeps iframe separate */
+.details iframe {
+    display: block;
+    margin: 0 auto;
+    border-radius: 8px;
+    /* max-width: 100%; */
+}
+
+
+
+
