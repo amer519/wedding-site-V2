@@ -69,6 +69,7 @@ h2 {
     margin-bottom: 5px; /* Reduced space below the title */
     padding-bottom: 0px; /* Ensure there's no extra padding */
     /* color: #333; Darker color for better readability */
+    margin-top: -20px;
 }
 p {
     font-size: 20px; /* Increase font size for a grand look */
@@ -82,16 +83,11 @@ p {
 }
 
 
-
-
-
-
 /* Gallery Section - Curved Background */
 .gallery-container {
-    /* background: #e5d5c3; */
     background: #f8f5f2;
-    padding: 50px 20px;
-    border-radius: 30px; /* Smooth rounded edges */
+    padding: 80px 20px 100px; /* More padding to prevent overlap */
+    border-radius: 30px;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
     max-width: 1000px;
     margin: 0 auto;
@@ -99,21 +95,22 @@ p {
     overflow: hidden;
 }
 
-/* Create Curved Shape */
-.gallery-container::before, .gallery-container::after {
+/* Adjust the wavy background effect for Gallery */
+.gallery-container::before,
+.gallery-container::after {
     content: "";
     position: absolute;
     width: 100%;
-    height: 50px;
+    height: 80px;
     background: inherit;
-    clip-path: ellipse(50% 50px at center);
+    clip-path: ellipse(50% 80px at center);
 }
 .gallery-container::before {
-    top: -25px;
+    top: -40px;
     transform: scaleY(-1);
 }
 .gallery-container::after {
-    bottom: -25px;
+    bottom: -40px;
 }
 
 /* Gallery Grid */
@@ -121,14 +118,13 @@ p {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 15px;
+    gap: 50px;
     padding: 20px;
 }
-
-/* Style Images */
+/* Style Images in Gallery */
 .gallery-grid img {
-    width: 140px;
-    height: 140px;
+    width: 250px;
+    height: 250px;
     object-fit: cover;
     border-radius: 10px;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
@@ -137,9 +133,6 @@ p {
     transform: scale(1.1);
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
 }
-
-
-
 
 /* Hero Section & Parallax Background */
 .parallax-container {
@@ -153,7 +146,6 @@ p {
     border-radius: 20px;
     margin-top: 40px;  /* Adds space below the navbar */
     z-index: 1;
-
 }
 .parallax-container img {
     object-fit: cover;
@@ -168,7 +160,7 @@ p {
     width: 100%;
     height: 100%;
     background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1));
-    border-radius: 20px
+    border-radius: 20px;
 }
 .hero-content {
     text-align: center;
@@ -215,17 +207,17 @@ p {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 15px;
+    /* gap: 15px; */
     padding: 20px;
 }
-.gallery-grid img, .party-member img {
+.party-member img {
     width: 140px;
     height: 140px;
     object-fit: cover;
     border-radius: 10px;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
-.gallery-grid img:hover, .party-member img:hover {
+.party-member img:hover {
     transform: scale(1.1);
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
 }
@@ -244,14 +236,12 @@ p {
     border-radius: 15px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
-
 .rsvp-form {
     display: flex;
     flex-direction: column;
     max-width: 600px;
     margin: 0 auto;
 }
-
 .rsvp-form input,
 .rsvp-form select,
 .rsvp-form textarea {
@@ -261,7 +251,6 @@ p {
     border: 1px solid #ccc;
     border-radius: 5px;
 }
-
 .rsvp-btn {
     background: linear-gradient(45deg, #ff9a9e, #fad0c4);
     color: white;
@@ -272,30 +261,42 @@ p {
     box-shadow: 0 4px 15px rgba(255, 154, 158, 0.3);
     cursor: pointer;
 }
-
 .rsvp-btn:hover {
     box-shadow: 0 6px 25px rgba(255, 154, 158, 0.5);
     transform: scale(1.05);
 }
 
-/* Wedding Party Section with Brown Background */
-/* Ensure Wedding Party Section is Centered */
+/* Wedding Party Section - Optimized for Curved Background */
 .wedding-party-section {
-    background: #e5d5c3; /* Light brown */
-    padding: 50px 20px;
+    background: #e5d5c3;
+    padding: 80px 20px 100px; /* Ensure enough space for curved effects */
     border-radius: 30px;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-    max-width: 1000px; /* Keeps width reasonable */
-    margin: 0 auto; /* ✅ Centers the entire section */
-    text-align: center;
+    max-width: 1000px;
+    margin: 40px auto; /* Added vertical margin for separation */
     position: relative;
     overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* ✅ Ensures internal content is centered */
+    z-index: 0; /* Create stacking context for pseudo-elements */
+}
+.wedding-party-section::before,
+.wedding-party-section::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 80px;
+    background: inherit;
+    clip-path: ellipse(50% 80px at center);
+    z-index: -1; /* Place these curves behind the content */
+}
+.wedding-party-section::before {
+    top: -40px;
+    transform: scaleY(-1);
+}
+.wedding-party-section::after {
+    bottom: -40px;
 }
 
-/* Ensure Title is Centered */
+/* Ensure Title is Centered in Wedding Party Section */
 .wedding-party-section h2 {
     font-size: 42px;
     font-weight: 500;
@@ -310,12 +311,12 @@ p {
 .wedding-party-grid {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* ✅ Ensures all items are centered */
-    align-items: center; /* ✅ Fixes vertical alignment */
+    justify-content: center; /* Ensures all items are centered */
+    align-items: center; /* Fixes vertical alignment */
     gap: 20px;
     width: 100%; /* Prevents stretching issues */
-    max-width: 800px; /* ✅ Centers content within this width */
-    margin: 0 auto; /* ✅ Forces full centering */
+    max-width: 800px; /* Centers content within this width */
+    margin: 0 auto; /* Forces full centering */
 }
 
 /* Individual Wedding Party Members */
@@ -328,8 +329,6 @@ p {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out;
 }
-
-/* Circular Images inside Boxes */
 .party-member img {
     width: 100px;
     height: 100px;
@@ -337,13 +336,9 @@ p {
     object-fit: cover;
     margin-bottom: 10px;
 }
-
-/* Hover Effect */
 .party-member:hover {
     transform: scale(1.05);
 }
-
-/* Name and Role Styling */
 .party-member h3 {
     font-size: 18px;
     font-weight: bold;
@@ -355,9 +350,6 @@ p {
     line-height: 1.5;
 }
 
-
-
-
 /* Add Alternating Section Backgrounds */
 .alt-section {
     background: #e5d5c3; /* Light warm brown */
@@ -368,8 +360,6 @@ p {
     position: relative;
     overflow: hidden;
 }
-
-/* Smooth Wavy Background Effect */
 .alt-section::before, .alt-section::after {
     content: "";
     position: absolute;
@@ -392,7 +382,6 @@ p {
     padding: 60px 20px;
     border-radius: 30px;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-    /* padding-top: 40px; */
 }
 .wedding-details-section {
     background: #f8f5f2;
@@ -402,12 +391,11 @@ p {
 }
 .couple-section {
     background: #e5d5c3;
-    padding: 60px 20px;
+    /* padding: 60px 20px; */
     border-radius: 30px;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
-
 .couple-section h2 {
     font-size: 42px; /* Increase font size for a grand look */
     font-weight: 500; /* Slightly lighter for elegance */
@@ -417,8 +405,8 @@ p {
     margin-bottom: 5px; /* Reduced space below the title */
     padding-bottom: 0px; /* Ensure there's no extra padding */
     color: #333; /* Darker color for better readability */
+    margin-top: 0px;
 }
-
 .couple-section p {
     font-size: 20px; /* Increase font size for a grand look */
     font-weight: 500; /* Slightly lighter for elegance */
@@ -430,23 +418,15 @@ p {
     color: #333; /* Darker color for better readability */
 }
 
-/* Wedding Party Section (Ensures Proper Background) */
-/* Keep Everything Else the Same */
-
-
-
-
-
 /* Wedding Details Section */
 .details {
     position: relative;
     padding: 50px 20px;
     text-align: center;
 }
-
 /* Curved Background Behind Text */
 .details-content {
-    background: #e5d5c3; /* Light brown */
+    background: #f8f5f2;
     padding: 30px 20%;
     border-radius: 30px;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
@@ -456,25 +436,6 @@ p {
     margin-bottom: 20px;
     position: relative;
 }
-
-/* Create Smooth Curved Edges */
-/* .details-content::before, .details-content::after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 50px;
-    background: inherit;
-    clip-path: ellipse(50% 50px at center);
-} */
-/* .details-content::before {
-    top: -25px;
-    transform: scaleY(-1);
-}
-.details-content::after {
-    bottom: -25px;
-} */
-
-/* Keeps iframe separate */
 .details iframe {
     display: block;
     margin: 0 auto;
@@ -482,6 +443,29 @@ p {
     /* max-width: 100%; */
 }
 
-
-
-
+.vine {
+    width: 300px;   /* adjust as needed */
+    height: auto;
+  }
+  
+  /* If you need to differentiate left-vine vs right-vine */
+  /* .vine-left { */
+    /* extra styling if needed */
+  /* } */
+  /* .vine-right { */
+    /* extra styling if needed */
+  /* } */
+  
+  /* Style the ring image */
+  .ring {
+    width: 50px;   /* adjust as needed */
+    height: auto;
+  }
+  
+  /* Keep circular style for bride/groom */
+  .circular-img {
+    width: 180px;  /* or your chosen size */
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
