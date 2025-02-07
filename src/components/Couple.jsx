@@ -5,7 +5,7 @@ import groomImage from "../assets/groom.jpg";
 // Add your new images here
 import leftVine from "../assets/left-vine.png";
 import rightVine from "../assets/right-vine.png";
-// import ring from "../assets/ring.png";
+import ring from "../assets/ring.png";
 
 const Couple = () => {
   return (
@@ -27,7 +27,7 @@ const Couple = () => {
         </div>
 
 
-        {/* <img src={ring} alt="Wedding Ring" className="ring" /> */}
+        <img src={ring} alt="Wedding Ring" className="ring" />
 
 
         <div className="person">

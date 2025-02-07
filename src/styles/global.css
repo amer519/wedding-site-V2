@@ -82,7 +82,6 @@ p {
     /* color: #333; Darker color for better readability */
 }
 
-
 /* Gallery Section - Curved Background */
 .gallery-container {
     background: #f8f5f2;
@@ -446,26 +445,144 @@ p {
 .vine {
     width: 300px;   /* adjust as needed */
     height: auto;
-  }
+}
   
-  /* If you need to differentiate left-vine vs right-vine */
-  /* .vine-left { */
-    /* extra styling if needed */
-  /* } */
-  /* .vine-right { */
-    /* extra styling if needed */
-  /* } */
+/* If you need to differentiate left-vine vs right-vine */
+/* .vine-left { */
+/* extra styling if needed */
+/* } */
+/* .vine-right { */
+/* extra styling if needed */
+/* } */
   
-  /* Style the ring image */
-  .ring {
-    width: 50px;   /* adjust as needed */
-    height: auto;
-  }
+/* Style the ring image */
+.ring {
+    width: 75px;   /* adjust as needed */
+    height: 75px;
+    margin-top: 70px; /* Push it slightly down */
+}
   
-  /* Keep circular style for bride/groom */
-  .circular-img {
+/* Keep circular style for bride/groom */
+.circular-img {
     width: 180px;  /* or your chosen size */
     height: 180px;
     object-fit: cover;
     border-radius: 50%;
+}
+
+/* Responsive Styles for Mobile Devices */
+@media (max-width: 768px) {
+  /* Adjust Navigation Bar */
+  .navbar ul {
+    flex-direction: column;
+    gap: 10px;
   }
+  .navbar li {
+    font-size: 14px;
+  }
+  .navbar a {
+    padding: 6px 10px;
+  }
+
+  /* Section Layout Adjustments */
+  section {
+    padding: 10px 15px;
+  }
+  h2 {
+    font-size: 32px;
+    letter-spacing: 1px;
+  }
+  p {
+    font-size: 16px;
+  }
+
+  /* Gallery Grid Adjustments */
+  .gallery-grid {
+    gap: 20px;
+    padding: 10px;
+  }
+  .gallery-grid img {
+    width: 150px;
+    height: 150px;
+  }
+
+  /* Parallax & Hero Content Adjustments */
+  .parallax-container {
+    height: 25vh;
+    margin-top: 60px;
+  }
+  .hero-content h1 {
+    font-size: 28px;
+  }
+  .hero-content h2 {
+    font-size: 18px;
+  }
+  .hero-content p {
+    font-size: 14px;
+  }
+
+  /* Wedding Couple Section Adjustments */
+  .couple-images {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .circular-img {
+    width: 120px;
+    height: 120px;
+  }
+
+  /* Wedding Party Section Adjustments */
+  .party-member {
+    width: 200px;
+    padding: 15px;
+  }
+  .party-member img {
+    width: 80px;
+    height: 80px;
+  }
+  .party-member h3 {
+    font-size: 16px;
+  }
+  .party-member p {
+    font-size: 12px;
+  }
+
+  /* Details and RSVP Section Adjustments */
+  .details iframe {
+    max-width: 100%;
+  }
+  .rsvp-form input,
+  .rsvp-form select,
+  .rsvp-form textarea {
+    font-size: 16px;
+  }
+  .rsvp-btn {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+
+  /* Alternating Section and Details Content Adjustments */
+  .alt-section {
+    padding: 40px 10px;
+  }
+  .photo-gallery-section,
+  .wedding-details-section {
+    padding: 40px 10px;
+  }
+  .details-content {
+    padding: 30px 10%;
+  }
+
+  /* Vine and Ring Image Adjustments */
+  .vine {
+    width: 120px; /* reduced from 200px */
+  }
+  .ring {
+    width: 50px;
+    height: 50px;
+    margin-top: 40px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
