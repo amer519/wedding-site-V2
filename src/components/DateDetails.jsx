@@ -6,7 +6,7 @@ const DateDetails = () => {
       {/* Curved Background Behind Text */}
       <div className="details-content">
         <h2>Wedding Details</h2>
-        <p>📍 Location: Grand Venue, City</p>
+        <p>📍 Location: The Mansion on Main Street</p>
         <p>⏰ Time: 5:00 PM</p>
       </div>
 
