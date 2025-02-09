@@ -560,6 +560,15 @@ p {
     .navbar a {
       padding: 6px 8px;  /* Reduce horizontal padding to avoid extra width */
     }
+
+    body {
+        background-image: url("/public/images/background-mobile.jpg");
+        background-size: cover; /* Or adjust as needed */
+        background-attachment: scroll;
+        background-position: center;
+      }
+
+    
   }   
 
   footer {
