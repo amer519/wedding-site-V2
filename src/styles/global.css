@@ -538,12 +538,29 @@ p {
 
 @media (max-width: 768px) {
     .navbar {
+      width: 100%;
+      max-width: 100vw;  /* Ensure the navbar never exceeds the viewport width */
+      overflow-x: hidden;  /* Prevent any horizontal scroll */
       padding: 5px 0;  /* Reduced vertical padding on mobile */
     }
-    .navbar li {
-      font-size: 14px; /* Reduced font size on mobile */
+    
+    .navbar ul {
+      display: flex;
+      flex-wrap: wrap;   /* Allow items to wrap onto a new line if needed */
+      justify-content: center;
+      gap: 10px;         /* Reduce gap if necessary */
+      margin: 0;
+      padding: 0;
     }
-  }  
+    
+    .navbar li {
+      font-size: 14px;  /* Reduced font size on mobile */
+    }
+    
+    .navbar a {
+      padding: 6px 8px;  /* Reduce horizontal padding to avoid extra width */
+    }
+  }   
 
   footer {
     display: flex;
