@@ -20,10 +20,10 @@ const App = () => {
       <Navbar />
       <motion.section id="home" variants={fadeIn} initial="hidden" animate="visible">
       <Hero />
-      </motion.section>;
+      </motion.section>
       <motion.section id="home" variants={fadeIn} initial="hidden" animate="visible">
       <Couple />
-      </motion.section>;
+      </motion.section>
       <DateDetails />
       <Gallery />
       <WeddingParty />
