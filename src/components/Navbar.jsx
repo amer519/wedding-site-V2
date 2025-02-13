@@ -5,7 +5,7 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <ul>
-        {["home", "couple", "details", "gallery", "wedding-party", "rsvp"].map((section) => (
+        {["home", "couple", "gallery", "wedding-party", "rsvp"].map((section) => (
           <li key={section}>
             <Link to={section} smooth={true} duration={500}>
               {section.replace("-", " ").toUpperCase()}

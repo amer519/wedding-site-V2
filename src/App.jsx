@@ -26,7 +26,7 @@ const App = () => {
       <motion.section id="home" variants={fadeIn} initial="hidden" animate="visible">
       <Couple />
       </motion.section>
-      <DateDetails />
+      {/* <DateDetails /> */}
       <Gallery />
       <WeddingParty />
       <RSVP />

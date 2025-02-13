@@ -165,7 +165,7 @@ p {
 /* Gallery Section - Curved    */
 /* --------------------------- */
 .gallery-container {
-  background: #f8f5f2;
+  background: linear-gradient(135deg, #ffffff 0%, #cceeff 100%);
   padding: 80px 20px 100px;
   border-radius: 30px;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
@@ -374,10 +374,10 @@ p {
 /* Wedding Party Section - Curved BG    */
 /* ------------------------------------ */
 .wedding-party-section {
-  background: #e5d5c3;
+  /* background: linear-gradient(135deg, #87cefa 0%, #f0f8ff 100%); */
   padding: 80px 20px 100px;
   border-radius: 30px;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); */
   max-width: 1000px;
   margin: 40px auto;
   position: relative;
@@ -427,7 +427,7 @@ p {
 }
 
 .party-member {
-  background: white;
+  background: linear-gradient(135deg, #87cefa 0%, #f0f8ff 100%);
   padding: 20px;
   width: 250px;
   border-radius: 15px;

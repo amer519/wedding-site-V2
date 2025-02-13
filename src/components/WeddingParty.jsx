@@ -37,7 +37,7 @@ const weddingParty = [
 const WeddingParty = () => {
   return (
     <Parallax
-      bgImage={weddingPartyBackground}
+    //   bgImage={weddingPartyBackground}
       strength={300}
       className="wedding-party-section"  // Parallax container styling
     >
