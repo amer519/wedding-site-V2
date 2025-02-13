@@ -1,4 +1,6 @@
-/* Global Reset */
+/* ------------------ */
+/* Global Reset       */
+/* ------------------ */
 *,
 *::before,
 *::after {
@@ -13,12 +15,14 @@ html, body {
   overflow-x: hidden;
 }
 
-/* General Styles */
+/* ------------------ */
+/* General Styles     */
+/* ------------------ */
 body {
   font-family: 'Lora', serif;
-  background-color: #f8f5f2;
+  background-color: #ffffff;
   color: #333;
-  background-image: url("/public/images/background.jpg");
+  /* background-image: url("/public/images/background.jpg"); */
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
@@ -28,7 +32,9 @@ h1, h2 {
   font-family: 'Playfair Display', serif;
 }
 
-/* Navigation Bar */
+/* ------------------ */
+/* Navigation Bar     */
+/* ------------------ */
 .navbar {
   position: fixed;
   top: 0;
@@ -42,7 +48,6 @@ h1, h2 {
 .navbar ul {
   display: flex;
   justify-content: center;
-  /* gap: 25px; */
   list-style: none;
   padding: 0;
   margin: 0;
@@ -68,7 +73,9 @@ h1, h2 {
   box-shadow: 0px 4px 12px rgba(255, 154, 158, 0.5);
 }
 
-/* Section Layout & Spacing */
+/* ---------------------------- */
+/* Section Layout & Spacing     */
+/* ---------------------------- */
 section {
   width: 100%;
   max-width: 1200px;
@@ -98,7 +105,65 @@ p {
   padding-bottom: 0;
 }
 
-/* Gallery Section - Curved Background */
+/* ----------------------------------- */
+/* Hero Section & Full-Screen Parallax */
+/* ----------------------------------- */
+.parallax-container {
+  width: 100%;
+  min-height: 100vh; /* Full screen height */
+  display: flex;
+  align-items: center;    /* Center hero content vertically */
+  justify-content: center; /* Center hero content horizontally */
+  position: relative;
+  overflow: hidden;
+  margin-top: 0;       /* Remove top margin for a clean, full-bleed hero */
+  border-radius: 0;    /* Modern, straight corners */
+  z-index: 1;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+
+/* Subtle overlay so text is readable on the background image */
+.parallax-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
+  pointer-events: none;
+}
+
+/* Hero Content: bigger fonts, more spacing for a modern, elegant feel */
+.hero-content {
+  text-align: center;
+  max-width: 800px;
+  padding: 40px 20px; 
+  background: rgba(0, 0, 0, 0.4);
+  color: white;
+  border-radius: 15px;
+}
+
+.hero-content h1 {
+  font-size: 48px;    /* Larger for impact */
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.hero-content h2 {
+  font-size: 26px;
+  margin-bottom: 12px;
+}
+
+.hero-content p {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+/* --------------------------- */
+/* Gallery Section - Curved    */
+/* --------------------------- */
 .gallery-container {
   background: #f8f5f2;
   padding: 80px 20px 100px;
@@ -129,7 +194,6 @@ p {
   bottom: -40px;
 }
 
-/* Gallery Grid */
 .gallery-grid {
   display: flex;
   flex-wrap: wrap;
@@ -151,67 +215,14 @@ p {
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
 }
 
-/* Hero Section & Parallax Background */
-.parallax-container {
-  width: 100%;
-  height: 35vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
-  border-radius: 20px;
-  margin-top: 40px;
-  z-index: 1;
-}
-
-.parallax-container img {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
-}
-
-.parallax-container::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1));
-  border-radius: 20px;
-}
-
-.hero-content {
-  text-align: center;
-  max-width: 800px;
-  padding: 30px 20px;
-  background: rgba(0, 0, 0, 0.4);
-  color: white;
-  border-radius: 15px;
-}
-
-.hero-content h1 {
-  font-size: 36px;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.hero-content h2 {
-  font-size: 22px;
-  margin-bottom: 8px;
-}
-
-.hero-content p {
-  font-size: 16px;
-  margin-bottom: 4px;
-}
-
-/* Wedding Couple Section */
+/* -------------------------------- */
+/* Wedding Couple Section           */
+/* -------------------------------- */
 .couple-section {
-  background: #e5d5c3;
-  border-radius: 30px;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  /* background: url("/public/images/couple-background.jpg") no-repeat center center fixed; */
+  /* background-size: cover; */
+  /* border-radius: 30px; */
+  /* box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); */
   text-align: center;
   margin: 0 auto;
   width: 100%;
@@ -234,11 +245,9 @@ p {
   color: #333;
 }
 
-/* Couple Images Container */
 .couple-images {
   display: flex;
   align-items: center;
-  /* gap: 50px; */
   max-width: 100%;
   overflow: hidden;
 }
@@ -256,7 +265,9 @@ p {
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Wedding Party & Gallery Grid Shared Styles */
+/* ----------------------------------- */
+/* Wedding Party & Shared Grid Styles  */
+/* ----------------------------------- */
 .gallery-grid,
 .wedding-party-grid {
   display: flex;
@@ -278,7 +289,9 @@ p {
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
 }
 
-/* Wedding Details & RSVP Section */
+/* ----------------------------------- */
+/* Wedding Details & RSVP Section      */
+/* ----------------------------------- */
 .details iframe {
   max-width: 600px;
   margin: 20px auto;
@@ -286,14 +299,29 @@ p {
   border-radius: 10px;
 }
 
-.rsvp-section {
+/* Overriding global section for RSVP to avoid "squeeze" */
+#rsvp.rsvp-section {
+  display: block !important;
+  flex-direction: unset !important;
+  align-items: unset !important;
+  margin: 60px auto; 
+  padding: 60px 40px;
+  max-width: 800px;
+  background: linear-gradient(135deg, #f0f8ff 0%, #87cefa 100%);
+  border-radius: 30px;
   text-align: center;
-  padding: 50px 20px;
-  background: #f8f5f2;
-  border-radius: 15px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
+/* RSVP Heading */
+.rsvp-section h2 {
+  margin-bottom: 25px;
+  font-family: "Playfair Display", serif;
+  font-size: 36px;
+  color: #333;
+}
+
+/* RSVP Form Container */
 .rsvp-form {
   display: flex;
   flex-direction: column;
@@ -301,33 +329,50 @@ p {
   margin: 0 auto;
 }
 
+/* Form Fields */
 .rsvp-form input,
 .rsvp-form select,
 .rsvp-form textarea {
   width: 100%;
-  padding: 10px;
-  margin: 10px 0;
+  padding: 14px;
+  margin: 12px 0;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
+/* Focus States */
+.rsvp-form input:focus,
+.rsvp-form select:focus,
+.rsvp-form textarea:focus {
+  border-color: #ff9a9e;
+  box-shadow: 0 0 5px rgba(255, 154, 158, 0.4);
+  outline: none;
+}
+
+/* RSVP Button */
 .rsvp-btn {
   background: linear-gradient(45deg, #ff9a9e, #fad0c4);
-  color: white;
-  padding: 12px 24px;
+  color: #fff;
+  padding: 14px 28px;
   font-size: 18px;
-  border-radius: 50px;
-  transition: 0.4s;
-  box-shadow: 0 4px 15px rgba(255, 154, 158, 0.3);
+  border: none;
+  border-radius: 25px;
   cursor: pointer;
+  transition: 0.4s;
+  box-shadow: 0 6px 15px rgba(255, 154, 158, 0.3);
+  margin-top: 20px;
 }
 
 .rsvp-btn:hover {
-  box-shadow: 0 6px 25px rgba(255, 154, 158, 0.5);
-  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(255, 154, 158, 0.5);
+  transform: translateY(-2px);
 }
 
-/* Wedding Party Section - Curved Background */
+/* ------------------------------------ */
+/* Wedding Party Section - Curved BG    */
+/* ------------------------------------ */
 .wedding-party-section {
   background: #e5d5c3;
   padding: 80px 20px 100px;
@@ -415,7 +460,9 @@ p {
   line-height: 1.5;
 }
 
-/* Alternating Section Backgrounds */
+/* ------------------------------------ */
+/* Alternating Section Backgrounds      */
+/* ------------------------------------ */
 .alt-section {
   background: #e5d5c3;
   padding: 60px 20px;
@@ -500,10 +547,26 @@ p {
   display: block;
 }
 
+/* Top Banner (if you still use this) */
+.top-banner-container {
+  width: 100%;
+  height: 500px; 
+  overflow: hidden;
+  position: relative;
+}
+
+.top-banner-image {
+  width: 100%; 
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 /* ------------------ */
 /* Mobile Adjustments */
 /* ------------------ */
 @media (max-width: 768px) {
+
   /* Couple Images: stack vertically and center */
   .couple-images {
     flex-direction: column;
@@ -512,75 +575,72 @@ p {
     width: 100%;
     align-items: center;
   }
-  
+
   .vine {
     width: 150px;
   }
-  
+
   .ring {
     width: 50px;
     height: 50px;
     margin: 20px 0;
   }
-  
+
   .circular-img {
     width: 150px;
     height: 150px;
   }
-  
+
   /* Adjust gallery images for mobile */
   .gallery-grid img {
     width: 100%;
     max-width: 200px;
     height: auto;
   }
+
+  /* Navbar on Mobile */
+  .navbar {
+    width: 100%;
+    max-width: 100vw; 
+    overflow-x: hidden;  
+    padding: 5px 0;  
+  }
+  
+  .navbar ul {
+    display: flex;
+    flex-wrap: wrap;  
+    justify-content: center;
+    gap: 10px;        
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar li {
+    font-size: 14px; 
+  }
+  
+  .navbar a {
+    padding: 6px 8px;  
+  }
+
+  body {
+    /* background-image: url("/public/images/background-mobile.jpg"); */
+    background-size: cover; 
+    background-attachment: scroll;
+    background-position: center;
+  }
 }
 
-@media (max-width: 768px) {
-    .navbar {
-      width: 100%;
-      max-width: 100vw;  /* Ensure the navbar never exceeds the viewport width */
-      overflow-x: hidden;  /* Prevent any horizontal scroll */
-      padding: 5px 0;  /* Reduced vertical padding on mobile */
-    }
-    
-    .navbar ul {
-      display: flex;
-      flex-wrap: wrap;   /* Allow items to wrap onto a new line if needed */
-      justify-content: center;
-      gap: 10px;         /* Reduce gap if necessary */
-      margin: 0;
-      padding: 0;
-    }
-    
-    .navbar li {
-      font-size: 14px;  /* Reduced font size on mobile */
-    }
-    
-    .navbar a {
-      padding: 6px 8px;  /* Reduce horizontal padding to avoid extra width */
-    }
+/* Footer (if needed) */
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  width: 100%;
+}
 
-    body {
-        background-image: url("/public/images/background-mobile.jpg");
-        background-size: cover; /* Or adjust as needed */
-        background-attachment: scroll;
-        background-position: center;
-      }
-
-    
-  }   
-
-  footer {
-    display: flex;
-    justify-content: center; /* Centers content horizontally */
-    align-items: center;     /* Centers content vertically (if needed) */
-    width: 100%;
-  }  
-
-
-
-/* * {
+/* Uncomment to debug layout 
+* {
     outline: 1px solid red;
-  } */
-  
+}
+*/

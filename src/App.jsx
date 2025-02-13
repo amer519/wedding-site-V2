@@ -1,4 +1,5 @@
 import React from "react";
+import TopBanner from './components/TopBanner';
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Couple from "./components/Couple";
@@ -17,6 +18,7 @@ const fadeIn = {
 const App = () => {
   return (
     <>
+      <TopBanner />
       <Navbar />
       <motion.section id="home" variants={fadeIn} initial="hidden" animate="visible">
       <Hero />
