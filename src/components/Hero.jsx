@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Parallax } from "react-parallax";
 import weddingbackground from "../assets/weddingbackground.jpg"; 
 
-const weddingDate = new Date("2025-06-15T00:00:00");
+const weddingDate = new Date("2026-06-25T00:00:00");
 
 // Animated number component
 const AnimatedNumber = ({ number }) => (
@@ -41,7 +41,7 @@ const Hero = () => {
         >
           Welcome to Our Wedding
         </motion.h1>
-        <h2>June 15, 2025</h2>
+        <h2>June 25, 2026</h2>
         <p>
           Countdown: 
           <AnimatedNumber number={days} /> days, 
